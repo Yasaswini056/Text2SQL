@@ -1,6 +1,5 @@
 import streamlit as st
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
-from huggingface_hub import login
 import torch
 import os
 import sqlparse
@@ -40,12 +39,9 @@ if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
 # ===== Load Model & Tokenizer ===== #
-hf_token = st.secrets["hf_token"]["token"]
-login(token=hf_token)
-
 model_name = "Yasaswini056/CodeT5-Text2SQL"
-tokenizer = AutoTokenizer.from_pretrained(model_name, token=hf_token)
-model = AutoModelForSeq2SeqLM.from_pretrained(model_name, token=hf_token)
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
 
 with st.expander("🗣️ Feedback"):
