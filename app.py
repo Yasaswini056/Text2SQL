@@ -45,7 +45,7 @@ login(token=hf_token)
 
 model_name = "Yasaswini056/CodeT5-Text2SQL"
 
-tokenizer = AutoTokenizer.from_pretrained(model_name, token=hf_token)
+tokenizer = AutoTokenizer.from_pretrained(model_name, token=hf_token, use_fast=False)
 model = AutoModelForSeq2SeqLM.from_pretrained(model_name, token=hf_token)
 
 
