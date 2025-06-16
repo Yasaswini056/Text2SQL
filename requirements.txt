@@ -1,6 +1,5 @@
 streamlit==1.45.1
 transformers==4.36.2
-torch
 sqlparse==0.5.3
 gspread==6.2.1
 oauth2client==4.1.3
