@@ -95,7 +95,7 @@ with left_col:
             st.warning("⚠️ Please enter both the table schema and the question.")
         else:
             input_text = f"tables: {table_schema_stripped}\nquestion: {question_stripped}"
-            inputs = tokenizer(input_text, return_tensors="pt", truncation=True, padding=True).to(device)
+            inputs = tokenizer(input_text, return_tensors="pt", truncation=True, padding=True)
             with torch.no_grad():
                 outputs = model.generate(**inputs, max_new_tokens=128)
             generated_sql = tokenizer.decode(outputs[0], skip_special_tokens=True).strip()
