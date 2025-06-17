@@ -47,7 +47,7 @@ model_name = "Yasaswini056/CodeT5-Text2SQL"
 
 @st.cache_resource
 def load_model():
-    tokenizer = AutoTokenizer.from_pretrained(model_name, token=hf_token, Use_Fast=False)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, token=hf_token, use_fast=False)
     model = AutoModelForSeq2SeqLM.from_pretrained(model_name, token=hf_token)
     return tokenizer, model
 
